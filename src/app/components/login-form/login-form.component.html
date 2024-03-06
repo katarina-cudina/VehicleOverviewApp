@@ -1,0 +1,13 @@
+
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h1>Sign in to AVL Vehicle App</h1>
+    <label for="username">Username: </label>
+    <input id="username" type="text" [formControl]="loginForm.controls.username">
+    <label for="password">Password: </label>
+    <input id="password" type="password" [formControl]="loginForm.controls.password">
+   
+    
+    <app-button text="Sign in" type="submit" [disabled]="!loginForm.valid"></app-button>
+</form>
+
