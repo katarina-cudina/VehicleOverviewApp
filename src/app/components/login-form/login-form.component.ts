@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 
 export class LoginFormComponent {
-  router = new Router();
+  
   // we could move this helper function to separate folder
   forbiddenNameValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
@@ -29,8 +29,10 @@ export class LoginFormComponent {
   }
   );
 
+  router = new Router();
   onSubmit() {
     console.log('Submitting!');
+    
     this.router.navigate(['/', 'overview']);
     // redirect to next page 
   }
