@@ -7,10 +7,11 @@ import { VehicleService } from './core/vehicle/vehicle.service';
 import { ButtonComponent } from './components/button/button.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { FormInputComponent } from './components/form-input/form-input.component';
+import { OverviewComponent } from './components/overview/overview.component';
 
 @NgModule({
-  declarations: [AppComponent, FormInputComponent],
-  imports: [BrowserModule, AppRoutingModule, ButtonComponent, LoginFormComponent],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, ButtonComponent, LoginFormComponent, FormInputComponent, OverviewComponent], 
   providers: [VehicleService],
   bootstrap: [AppComponent],
 })
