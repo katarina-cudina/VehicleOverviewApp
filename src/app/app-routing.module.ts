@@ -4,10 +4,10 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { OverviewComponent } from './components/overview/overview.component';
 
 const routes: Routes = [
-  // { path: 'heroes', component: HeroesComponent }
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
   { path: 'sign-in', component: LoginFormComponent},
-  { path: 'overview', component: OverviewComponent }
+  { path: 'overview', component: OverviewComponent },
+  // { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

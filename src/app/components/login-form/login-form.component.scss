@@ -1,0 +1,20 @@
+.sign-in-container {
+    background-image: url("https://www.avl.com/sites/default/files/styles/panorama_4k/public/2022-11/gl_pte_keyvisual_16_9_highres_08.21.png.webp");
+    background-color: #cccccc;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .form-container{
+        background-color: white;
+        width: 30vh;
+        margin: 5vh;
+        padding: 10% 5%;
+
+        h1 {
+            font-size: 20px;
+            font-weight: 100;
+        }
+    }
+}
