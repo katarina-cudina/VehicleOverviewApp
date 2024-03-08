@@ -6,7 +6,7 @@ import { ButtonModule } from 'primeng/button';
   standalone: true,
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
-  // imports: [ButtonModule]
+  imports: [ButtonModule]
 })
 
 export class ButtonComponent{

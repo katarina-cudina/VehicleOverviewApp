@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VehicleService } from './core/vehicle/vehicle.service';
@@ -13,8 +13,8 @@ import { SearchComponent } from './components/search/search.component';
 import { TableComponent } from './components/table/table.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, SearchComponent, TableComponent],
-  imports: [BrowserModule, AppRoutingModule, ButtonComponent, LoginFormComponent, FormInputComponent, OverviewComponent], 
+  declarations: [AppComponent, HeaderComponent],
+  imports: [BrowserModule, AppRoutingModule, ButtonComponent, LoginFormComponent, FormInputComponent, OverviewComponent, SearchComponent, TableComponent, FormsModule], 
   providers: [VehicleService],
   bootstrap: [AppComponent],
 })

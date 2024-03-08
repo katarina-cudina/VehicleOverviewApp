@@ -1,1 +1,29 @@
-<p>table works!</p>
+<p-table [tableStyle]="{ 'min-width': '50rem' }" [value]="rows">
+    <ng-template pTemplate="header">
+        <tr>
+            <th *ngFor="let column of columns">
+                {{column.name}}
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-cols="columns">
+        <tr>
+            <td *ngFor="let column of columns">
+                
+                <div *ngIf="column.accessor == 'active'; else regularColumn">
+                    <i class="pi pi-check" *ngIf="rowData[column.accessor]; else notActive"></i>
+                    <ng-template #notActive>
+                        <i class="pi pi-times"></i>
+                      </ng-template>
+                   
+                </div>
+                <ng-template #regularColumn>
+                    {{rowData[column.accessor]}}
+                </ng-template>
+            
+            
+            </td>
+                  
+        </tr>
+    </ng-template>
+</p-table>
