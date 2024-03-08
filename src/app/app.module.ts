@@ -11,6 +11,7 @@ import { OverviewComponent } from './components/overview/overview.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SearchComponent } from './components/search/search.component';
 import { TableComponent } from './components/table/table.component';
+import { NavigationEnd, Router } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
