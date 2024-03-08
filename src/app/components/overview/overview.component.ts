@@ -45,8 +45,6 @@ export class OverviewComponent {
       const searchQuery = query.toLocaleLowerCase();
       return Object.keys(vehicle).some(key => String(vehicle[key]).toLocaleLowerCase().includes(searchQuery))
     });
-
-      console.log(this.filteredVehicles);
   } 
 
   }

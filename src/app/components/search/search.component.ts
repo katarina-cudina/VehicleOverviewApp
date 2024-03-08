@@ -16,7 +16,6 @@ export class SearchComponent {
   @Input() searchText:string = '';
 
   onSearch() {
-    console.log(this.searchText);
     this.search.emit(this.searchText);
   }
 }

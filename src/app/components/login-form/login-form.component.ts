@@ -18,21 +18,18 @@ export class LoginFormComponent {
     return (control: AbstractControl): ValidationErrors | null => {
       const regEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/i;
       const isValid = regEx.test(control.value);
-      console.log(control.value, isValid);
       return !isValid ? { password: { value: control.value } } : null;
     };
   } 
 
   loginForm = new FormGroup({
     username: new FormControl('', [Validators.required, Validators.minLength(6)]),
-    password: new FormControl('', [Validators.required, this.forbiddenNameValidator()]), // will need custom validator (at least one capital letter, minimum 8 characters long, one number, one special char)
+    password: new FormControl('', [Validators.required, this.forbiddenNameValidator()]),
   }
   );
 
   router = new Router();
   onSubmit() {
-    console.log('Submitting!');
-    
     this.router.navigate(['/', 'overview']);
     // redirect to next page 
   }

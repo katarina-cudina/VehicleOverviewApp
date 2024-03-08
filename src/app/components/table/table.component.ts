@@ -13,8 +13,4 @@ export class TableComponent {
 
   @Input() columns: Array<any> = [];
   @Input() rows: Array<any> = [];
-
-  ngOnChanges() {
-    console.log('rows', this.rows);
-  }
 }
