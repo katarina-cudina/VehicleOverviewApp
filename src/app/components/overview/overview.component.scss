@@ -1,0 +1,12 @@
+div {
+
+    padding: 2% 10%;
+    display: flex;
+    flex-direction: column;
+
+    app-search {
+        align-self: flex-end;
+        padding-bottom: 5px;
+    }
+
+}

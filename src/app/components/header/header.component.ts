@@ -8,5 +8,9 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
   router = new Router();
-  isSignIn = this.router.url
+
+  signOut = () => {
+    this.router.navigate(['/sign-in']);
+
+  }
 }

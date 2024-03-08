@@ -11,6 +11,7 @@
 
 body {
     font-family: "Poppins";
+    margin: 0px;
 
     form {
         display: flex;
@@ -26,11 +27,6 @@ body {
     span {
         font-size: 8px;
         font-weight: 50;
-    }
-
-    button {
-        background-color: linear-gradient(120deg, #23a638, #009770 40%, #00878a 75%, #00a5c8);
-        height: 40px;
     }
 
     input {

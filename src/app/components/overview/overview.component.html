@@ -1,2 +1,9 @@
-<app-search [searchText]="searchText" (search)="filterVehicles($event)"></app-search>
-<app-table [rows]="filteredVehicles" [columns]="columns"></app-table>
+
+
+<div>
+
+    <app-search [searchText]="searchText" (search)="filterVehicles($event)"></app-search>
+    <app-table [rows]="filteredVehicles" [columns]="columns"></app-table>
+    
+    
+</div>

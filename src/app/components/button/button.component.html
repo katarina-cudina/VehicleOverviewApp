@@ -1,6 +1,7 @@
-<p-button [type]="type"
+<button 
+        pButton
+        [type]="type"
         [disabled]="disabled"
+        class="p-button p-button-text"
         (click)="onClick()"
-        icon="pi pi-check"
-        styleClass="p-button-sm"
-        >{{text}}</p-button>
+        >{{text}}</button>
