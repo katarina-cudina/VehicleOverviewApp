@@ -12,4 +12,5 @@ export class VehicleService {
   public getVehicles(): Observable<VehicleModel[]> {
     return of(VEHICLES);
   }
+
 }

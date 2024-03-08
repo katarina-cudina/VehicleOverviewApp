@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { SearchComponent } from '../search/search.component';
 import { TableComponent } from '../table/table.component';
 import { VehicleService } from 'src/app/core/vehicle/vehicle.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-overview',
   standalone: true,
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.scss'],
-  imports: [SearchComponent, TableComponent]
+  imports: [SearchComponent, TableComponent,FormsModule]
 })
 export class OverviewComponent {
   columns: Array<Object> = [
@@ -21,7 +22,9 @@ export class OverviewComponent {
     {name: "License Plate", accessor: 'licensePlate'},
     {name: "Active", accessor: 'active'}];
 
-  vehicles: Array<Object> = [];
+  vehicles: Array<any> = [];
+  filteredVehicles: Array<any> = [];
+  searchText: string = '';
 
   constructor(private vehicleService: VehicleService){
 
@@ -29,16 +32,21 @@ export class OverviewComponent {
 
   vehicles$.subscribe(
       vehicles => {
-        this.vehicles = vehicles.map(({mileage, price, color, ...relevantAttributes }) => relevantAttributes);}
+        this.vehicles = vehicles.map(({mileage, price, color, ...relevantAttributes }) => relevantAttributes);
+        this.filteredVehicles = this.vehicles;}
     )
   }
 
-  get(): void {
+  filterVehicles(query: string) {
+    if(!query)
+      this.filteredVehicles = this.vehicles;
+    else
+      this.filteredVehicles = this.vehicles.filter(vehicle => {
+      const searchQuery = query.toLocaleLowerCase();
+      return Object.keys(vehicle).some(key => String(vehicle[key]).toLocaleLowerCase().includes(searchQuery))
+    });
+
+      console.log(this.filteredVehicles);
+  } 
 
   }
-
-  ngOnInit(): void {
-    this.get();
-    console.log(this.vehicles);
-  }
-}

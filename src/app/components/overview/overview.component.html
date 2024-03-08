@@ -1,3 +1,8 @@
 <p>OVERVIEW</p>
-<app-search></app-search>
-<app-table [rows]="vehicles" [columns]="columns"></app-table>
+<app-search [searchText]="searchText" (search)="filterVehicles($event)"></app-search>
+<app-table [rows]="filteredVehicles" [columns]="columns"></app-table>
+
+<!-- <span class="p-input-icon-left">
+    <i class="pi pi-search"></i>
+    <input type="text" pInputText [(ngModel)]="searchText" />
+</span> -->

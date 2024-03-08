@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
+import { noop } from 'rxjs';
 
 
 @Component({
@@ -11,7 +12,11 @@ import { InputTextModule } from 'primeng/inputtext';
   imports: [InputTextModule, FormsModule]
 })
 export class SearchComponent {
+  @Output() search = new EventEmitter();
+  @Input() searchText:string = '';
 
-  value = '';
-
+  onSearch() {
+    console.log(this.searchText);
+    this.search.emit(this.searchText);
+  }
 }
