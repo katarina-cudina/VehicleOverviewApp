@@ -11,6 +11,5 @@ export class HeaderComponent {
 
   signOut = () => {
     this.router.navigate(['/sign-in']);
-
   }
 }

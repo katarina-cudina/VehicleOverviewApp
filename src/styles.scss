@@ -8,32 +8,14 @@
     font-weight: normal;
     font-style: normal;
 }
-
+html {
+    height: 100%;
+    margin: 0;
+}
 body {
     font-family: "Poppins";
     margin: 0px;
-
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    label {
-        font-size: 10px;
-        font-weight: 50;
-    }
-
-    span {
-        font-size: 8px;
-        font-weight: 50;
-    }
-
-    input {
-        height: 40px;
-        min-width: 100%;
-    }
-
+    height: 100%;
 }
 
 

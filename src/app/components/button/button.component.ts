@@ -1,5 +1,5 @@
 import { NgStyle } from '@angular/common';
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { noop } from 'rxjs';
 
@@ -21,7 +21,6 @@ export class ButtonComponent{
   
 
   onClick() {
-    console.log('Clicked.');
     this.onButtonClick();
   }
 }
