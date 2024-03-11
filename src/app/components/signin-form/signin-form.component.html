@@ -10,7 +10,7 @@
         (loginForm.controls.username.dirty ||
           loginForm.controls.username.touched)
       "
-      [warningMessage]="loginForm.controls.username.errors?.['required'] ? 'This field is required' : 'This field should contain at least 6 letters.'"
+      [warningMessage]="loginForm.controls.username.errors?.['required'] ? 'This field is required.' : 'This field should contain at least 6 letters.'"
       [control]="loginForm.controls.username"
     ></app-form-input>
     <app-form-input
@@ -22,7 +22,7 @@
         (loginForm.controls.password.dirty ||
           loginForm.controls.password.touched)
       "
-      [warningMessage]="loginForm.controls.password.errors?.['required'] ? 'This field is required' : 'Password should contain minimum of 8 characters, one number, one capital letter and one special character.'"
+      [warningMessage]="loginForm.controls.password.errors?.['required'] ? 'This field is required.' : 'Password should contain minimum of 8 characters, one number, one capital letter and one special character.'"
       [control]="loginForm.controls.password"
     ></app-form-input>
     <app-button
