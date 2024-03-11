@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 
-
 @Component({
   selector: 'app-search',
   standalone: true,
@@ -14,7 +13,7 @@ export class SearchComponent {
   @Output() search = new EventEmitter();
   @Input() searchText:string = '';
 
-  onSearch() {
+  onSearch = () =>{
     this.search.emit(this.searchText);
   }
 }

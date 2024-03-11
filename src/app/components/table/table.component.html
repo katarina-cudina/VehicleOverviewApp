@@ -18,10 +18,8 @@
                    
                 </div>
                 <ng-template #regularColumn>
-                    {{rowData[column.accessor]}}
+                    {{column.accessor !== 'name' ? rowData[column.accessor] : rowData[column.accessor] | vehicleNameFormatter}}
                 </ng-template>
-            
-            
             </td>
                   
         </tr>
