@@ -7,9 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  router = new Router();
+  constructor(private router: Router) {}
 
   signOut = () => {
     this.router.navigate(['/sign-in']);
+  }
+
+  ngOnInit(){
+
   }
 }

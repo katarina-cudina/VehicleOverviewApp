@@ -1,5 +1,5 @@
 <div class = 'input-container'>
     <label for="id">{{name}} </label>
     <input pInputText [id]="id" [type]="type" [formControl]="control" [placeholder]="name" />
-    <span *ngIf="showWarning">{{warningMessage}}</span>
+    <small class="warning" *ngIf="showWarning">{{warningMessage}}</small>
 </div>

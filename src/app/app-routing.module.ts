@@ -5,9 +5,9 @@ import { SigninFormComponent } from './components/signin-form/signin-form.compon
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/sign-in', pathMatch: 'full'},
-  { path: 'sign-in', pathMatch: 'full', component: SigninFormComponent},
-  { path: 'overview', pathMatch: 'full', component: OverviewComponent },
+  { path: '', pathMatch: 'full', redirectTo: '/sign-in'},
+  { path: 'sign-in', component: SigninFormComponent},
+  { path: 'overview', component: OverviewComponent },
   { path: '**', component: NotFoundComponent }
 ];
 

@@ -14,6 +14,8 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class SigninFormComponent {
 
+  constructor(private router: Router) {}
+
   passwordValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       const regEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/i;
@@ -28,9 +30,7 @@ export class SigninFormComponent {
   }
   );
 
-  router = new Router();
-
-  onSubmit() {
+  onSubmit = () => {
     this.router.navigateByUrl('/overview');
   }
 
