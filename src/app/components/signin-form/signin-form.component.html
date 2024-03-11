@@ -1,8 +1,35 @@
 <div class="sign-in-container">
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-container">
-        <h1>Sign in to AVL Vehicle App</h1>
-        <app-form-input name="Username" id="username" type="text" [showWarning]="loginForm.controls.username.invalid && (loginForm.controls.username.dirty || loginForm.controls.username.touched)" [control]="loginForm.controls.username"></app-form-input>
-        <app-form-input name="Password" id="password" type="password" [showWarning]="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched)" [control]="loginForm.controls.password"></app-form-input>
-        <app-button styleClass="p-button-lg p-button-success" text="Sign in" type="submit" ></app-button>
-    </form>
-</div><!-- [disabled]="!loginForm.valid" -->
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-container">
+    <h1>Sign in to AVL Vehicle App</h1>
+    <app-form-input
+      name="Username"
+      id="username"
+      type="text"
+      [showWarning]="
+        loginForm.controls.username.invalid &&
+        (loginForm.controls.username.dirty ||
+          loginForm.controls.username.touched)
+      "
+      [warningMessage]="loginForm.controls.username.errors?.['required'] ? 'This field is required' : 'This field should contain at least 6 letters.'"
+      [control]="loginForm.controls.username"
+    ></app-form-input>
+    <app-form-input
+      name="Password"
+      id="password"
+      type="password"
+      [showWarning]="
+        loginForm.controls.password.invalid &&
+        (loginForm.controls.password.dirty ||
+          loginForm.controls.password.touched)
+      "
+      [warningMessage]="loginForm.controls.password.errors?.['required'] ? 'This field is required' : 'Password should contain minimum of 8 characters, one number, one capital letter and one special character.'"
+      [control]="loginForm.controls.password"
+    ></app-form-input>
+    <app-button
+      styleClass="p-button-lg p-button-success"
+      text="Sign in"
+      type="submit"
+      [disabled]="!loginForm.valid"
+    ></app-button>
+  </form>
+</div>
