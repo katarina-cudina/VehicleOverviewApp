@@ -12,7 +12,7 @@ export class AppComponent {
   constructor (public router:Router) {
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
-        this.isSignIn = event.url === '/sign-in';
+        this.isSignIn = event.url === '/sign-in' || event.url === '/';
       }
     });
   }

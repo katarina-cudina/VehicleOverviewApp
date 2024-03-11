@@ -9,7 +9,6 @@
     <ng-template pTemplate="body" let-rowData let-cols="columns">
         <tr>
             <td *ngFor="let column of columns">
-                
                 <div *ngIf="column.accessor == 'active'; else regularColumn">
                     <i class="pi pi-check" *ngIf="rowData[column.accessor]; else notActive"></i>
                     <ng-template #notActive>
